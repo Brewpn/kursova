@@ -1,0 +1,47 @@
+.sidebar {
+  padding-left: 0;
+  background-color: $white;
+
+  .nav-link {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    height: 50px;
+    border-radius: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    padding: .7rem 1rem;
+
+    &.active,
+    &:hover {
+      color: $blue;
+      background: transparent;
+      transition: .3s;
+
+      &::before {
+        content: '';
+        background: $blue;
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .ic {
+      margin-right: 15px;
+      font-size: 16px;
+    }
+  }
+}

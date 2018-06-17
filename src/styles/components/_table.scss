@@ -1,0 +1,175 @@
+$table-border: #000000;
+
+// ----------------------
+
+.table {
+  margin: 0;
+  table-layout: fixed;
+
+  .thead-inverse {
+
+    th {
+      background-color: #3b3b3b;
+      font-size: 14px;
+    }
+  }
+
+  .table-edit {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .no-wrap {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .count-bold {
+    font: {
+      size: 18px;
+      weight: 700;
+    }
+  }
+
+  th {
+
+    &.filter {
+      //@include ic(arrow_back);
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding-right: 15px;
+      background-color: black;
+
+      &::before {
+        //@include ic-styles;
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        font-size: 10px;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      &.filter-desc {
+
+        &::before {
+          transform: translate(-50%, -50%) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  tr {
+
+    &:first-child {
+
+      td {
+        border-top-width: 0;
+      }
+    }
+  }
+
+  td {
+    overflow: hidden;
+    vertical-align: middle;
+
+    &.info {
+      position: relative;
+      padding-right: 15px;
+
+      .ic {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        transform: translate(0, -50%);
+      }
+
+      &.active {
+
+        .info-modal {
+          display: block;
+        }
+      }
+    }
+
+    .info-modal {
+      position: absolute;
+      display: none;
+      top: 100%;
+      right: 0;
+      width: 400px;
+      padding: 12px;
+      background-color: black;
+
+      &-title,
+      &-text {
+        color: black;
+        font: {
+          size: 12px;
+          weight: 700;
+        }
+      }
+
+      &-title {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  thead {
+
+    th {
+      border-width: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  tbody {
+
+    td {
+      color: black;
+      font: {
+        size: 12px;
+      }
+      text-align: left;
+    }
+
+    tr {
+
+      &:nth-child(even) {
+        background-color: #f7f7f7;
+      }
+
+      &:hover {
+        transition: .2s;
+        cursor: pointer;
+        background-color: darken(#f7f7f7, 5%);
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-around;
+
+      i {
+        transition: .3s;
+        font-size: 14px;
+        color: rgba(#000, .3);
+
+        &:hover {
+          transition: .3s;
+          color: rgba(#000, .7);
+        }
+      }
+    }
+  }
+}

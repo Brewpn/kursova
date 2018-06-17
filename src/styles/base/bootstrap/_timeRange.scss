@@ -1,0 +1,45 @@
+.input-range__label--min,
+.input-range__label--max {
+  bottom: -28px;
+  font-size: 14px;
+}
+
+.input-range__label--min {
+
+  .input-range__label-container {
+    left: 0;
+  }
+}
+
+.input-range__label--max {
+
+  .input-range__label-container {
+    right: 0;
+    left: 0;
+  }
+}
+
+.input-range__track--background {
+  margin-top: 8px;
+}
+
+.input-range__label--value {
+  margin-top: -8px;
+  font-size: 14px;
+}
+
+.input-range__slider {
+  background: #750011;
+  border: 1px solid #750011;
+}
+
+.input-range__track--active {
+  background: #750011;
+}
+
+.input-range__label--value {
+
+  .input-range__label-container {
+    left: inherit;
+  }
+}

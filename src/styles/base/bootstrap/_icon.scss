@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "iconFont";
+  src: url('../fonts/icon-font/iconFont.eot');
+  src: url('../fonts/icon-font/iconFont.eot?#iefix') format('eot'),
+  url('../fonts/icon-font/iconFont.woff2') format('woff2'),
+  url('../fonts/icon-font/iconFont.woff') format('woff'),
+  url('../fonts/icon-font/iconFont.ttf') format('truetype'),
+  url('../fonts/icon-font/iconFont.svg#iconFont') format('svg');
+}
+
+@mixin ic-styles {
+          font-family: "iconFont";
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: normal;
+          // speak: none; // only necessary if not using the private unicode range (firstGlyph option) sfdfgasdfasdf
+          text-decoration: none;
+          text-transform: none;
+        }
+
+%ic {
+  @include ic-styles;
+}
+
+
+@function ic-char($filename) {
+  $char: "";
+
+  @if $filename == activity_log {
+  $char: "\E001";
+}
+  @if $filename == add {
+  $char: "\E002";
+}
+  @if $filename == add_circle {
+  $char: "\E003";
+}
+  @if $filename == admins {
+  $char: "\E004";
+}
+  @if $filename == arrows_left {
+  $char: "\E005";
+}
+  @if $filename == arrows_right {
+  $char: "\E006";
+}
+  @if $filename == arrow_back {
+  $char: "\E007";
+}
+  @if $filename == arrow_down {
+  $char: "\E008";
+}
+  @if $filename == arrow_up {
+  $char: "\E009";
+}
+  @if $filename == bookings {
+  $char: "\E00A";
+}
+  @if $filename == char {
+  $char: "\E00B";
+}
+  @if $filename == check {
+  $char: "\E00C";
+}
+  @if $filename == close {
+  $char: "\E00D";
+}
+  @if $filename == dashboard {
+  $char: "\E00E";
+}
+  @if $filename == diagram {
+  $char: "\E00F";
+}
+  @if $filename == edit {
+  $char: "\E010";
+}
+  @if $filename == information {
+  $char: "\E011";
+}
+  @if $filename == locations {
+  $char: "\E012";
+}
+  @if $filename == notifications {
+  $char: "\E013";
+}
+  @if $filename == photo_camera {
+  $char: "\E014";
+}
+  @if $filename == pie {
+  $char: "\E015";
+}
+  @if $filename == plus {
+  $char: "\E016";
+}
+  @if $filename == ratings {
+  $char: "\E017";
+}
+  @if $filename == referral {
+  $char: "\E018";
+}
+  @if $filename == search {
+  $char: "\E019";
+}
+  @if $filename == services {
+  $char: "\E01A";
+}
+  @if $filename == star {
+  $char: "\E01B";
+}
+  @if $filename == tabl {
+  $char: "\E01C";
+}
+
+@return $char;
+}
+
+@mixin ic($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %ic;
+  } @else {
+    @include ic-styles;
+  }
+  content: ic-char($filename);
+}
+}
+
+.ic-activity_log {
+  @include ic(activity_log);
+}
+.ic-add {
+  @include ic(add);
+}
+.ic-add_circle {
+  @include ic(add_circle);
+}
+.ic-admins {
+  @include ic(admins);
+}
+.ic-arrows_left {
+  @include ic(arrows_left);
+}
+.ic-arrows_right {
+  @include ic(arrows_right);
+}
+.ic-arrow_back {
+  @include ic(arrow_back);
+}
+.ic-arrow_down {
+  @include ic(arrow_down);
+}
+.ic-arrow_up {
+  @include ic(arrow_up);
+}
+.ic-bookings {
+  @include ic(bookings);
+}
+.ic-char {
+  @include ic(char);
+}
+.ic-check {
+  @include ic(check);
+}
+.ic-close {
+  @include ic(close);
+}
+.ic-dashboard {
+  @include ic(dashboard);
+}
+.ic-diagram {
+  @include ic(diagram);
+}
+.ic-edit {
+  @include ic(edit);
+}
+.ic-information {
+  @include ic(information);
+}
+.ic-locations {
+  @include ic(locations);
+}
+.ic-notifications {
+  @include ic(notifications);
+}
+.ic-photo_camera {
+  @include ic(photo_camera);
+}
+.ic-pie {
+  @include ic(pie);
+}
+.ic-plus {
+  @include ic(plus);
+}
+.ic-ratings {
+  @include ic(ratings);
+}
+.ic-referral {
+  @include ic(referral);
+}
+.ic-search {
+  @include ic(search);
+}
+.ic-services {
+  @include ic(services);
+}
+.ic-star {
+  @include ic(star);
+}
+.ic-tabl {
+  @include ic(tabl);
+}

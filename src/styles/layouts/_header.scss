@@ -1,0 +1,78 @@
+.main-header {
+  background-color: $blue;
+  color: $white;
+
+  &.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    margin-left: 75px;
+
+    img {
+      width: 75px;
+    }
+  }
+
+  .user-name {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 0;
+  }
+
+  .user-role {
+    position: relative;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0 40px;
+
+    &-list {
+      position: absolute;
+      display: none;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 220px;
+      padding: 10px 15px;
+      background-color: $blue;
+
+      &-item {
+        cursor: pointer;
+        font-size: 14px;
+        color: $white;
+        line-height: 1.8em;
+      }
+
+      a { color: $white; }
+    }
+
+    .icon-arrow-down {
+      cursor: pointer;
+      position: absolute;
+      vertical-align: super;
+      right: 15px;
+    }
+
+    &.active {
+
+      .user-dropdown-list {
+        display: block;
+      }
+    }
+  }
+}

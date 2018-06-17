@@ -1,0 +1,19 @@
+image: node:8.9.0
+
+pipelines:
+
+  branches:
+        development:
+            - step:
+                name: Test
+                caches:
+                    - node
+                script:
+                    # There are should be a tests
+                    - npm install
+                    - npm run test
+            - step:
+                name: Deploy development
+                script:
+                    - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git development:master
+                deployment: test
